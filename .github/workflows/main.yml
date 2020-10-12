@@ -1,24 +1,27 @@
-name: My Workflow
-on: [push, pull_request]
+name: Noob
 jobs:
-  build:
+  check-version:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: Find and Replace
-      uses: shitiomatic/str-replace@master
-      with:
-        find: "hello"
-        replace: "world"
-
-
-    - name: Create Pull Request
+      - name: Find and Replace Base
+        uses: jacobtomlinson/gha-find-replace@0.1.1
+        with:
+          find: "test"
+          replace: "sed"
+      - name: Find and Replace Notebook
+        uses: jacobtomlinson/gha-find-replace@0.1.1
+        with:
+          find: "hi"
+          replace: "bye"
+      - name: Create Pull Request
         uses: peter-evans/create-pull-request@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "Test"
-          title: "Kek"
-          reviewers: "StarkxD"
-          branch: "Test"
+          commit-message: "Update Dask version to ${{ steps.latest_version.outputs.version }}"
+          title: "Update Dask version to ${{ steps.latest_version.outputs.version }}"
+          reviewers: "jacobtomlinson"
+          branch: "upgrade-dask-version"
           body: |
-            Sed
+            A new Dask version has been detected.
+
+            Updated `Dockerfile`s to use `${{ steps.latest_version.outputs.version }}`.
