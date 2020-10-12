@@ -1,7 +1,7 @@
 name: Noob
 jobs:
   runs-on: ubuntu-latest
-    steps:
+  steps:
       - name: Find and Replace Base
         uses: jacobtomlinson/gha-find-replace@0.1.1
         with:
