@@ -4,9 +4,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: Find and Replace
-      uses: shitiomatic/str-replace@master
-      with:
+    - uses: 
+    
+
+
+name: Format python code
+on: push
+jobs:
+  autopep8:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Test
+        uses: shitiomatic/str-replace@master
+        with:
+          args: --recursive --in-place --aggressive --aggressive .
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          - name: Find and Replace
         find: "test"
         replace: "hi"
