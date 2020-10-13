@@ -22,7 +22,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 buttons=buttons,
                 link_preview=False,
             )
-        if event.query.user_id == bot.uid and query == "stats":
+         if event.query.user_id == bot.uid and query == "stats":
            result = builder.article(
            title="Stats",
            text=f"**Showing Stats For {DEFAULTUSER}'s Friday** \nNote --> Only Owner Can Check This \n(C) @FridayOT",
@@ -30,6 +30,16 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                    [custom.Button.inline("Show Stats 🚶", data="terminator")],
                    [Button.url("Repo 🛡️", "https://github.com/StarkGang/FridayUserbot")],
                    [Button.url("Join Channel 📃", "t.me/Fridayot")],
+            ]
+         )
+         if event.query.user_id == bot.uid and query == "dontpm":
+           result = builder.article(
+           title="PM Test",
+           text=f"Hey, Let Me Know Why Are You Here",
+           buttons = [
+                   [custom.Button.inline("For Spamming", data="dontspamnigga")],
+                   [custom.Button.inline("For Talking With Master", data="whattalk")],
+                   [custom.Button.inline("For Asking Someting", data="askme")],
              ]
          )
         await event.answer([result] if result else None)
