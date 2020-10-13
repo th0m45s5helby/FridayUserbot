@@ -114,7 +114,11 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             else:
                 txt = "You Can't View My Masters Stats"
                 await event.answer(txt, alert=True)
-                
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"dontspamnigga")))
+    async def rip(event):
+            text = "Lmao 😂. You Have Been Blocked :)"
+            await borg.send_message(event.chat_id, text)    
+
 def paginate_help(page_number, loaded_plugins, prefix):
     number_of_rows = 8
     number_of_cols = 2
