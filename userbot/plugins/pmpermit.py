@@ -197,11 +197,14 @@ if Var.PRIVATE_GROUP_ID is not None:
         noob = "dontpm"
         tap = await bot.inline_query(botusername, USER_BOT_NO_WARN)
         sed = await tap[0].click(event.chat_id)
+        noobs = "approvenibba"
+        taps = await bot.inline_query(botusername, noobs)
+        seda = await tap[0].click(bot.uid)
+
         PM_WARNS[chat_id] += 1
         if chat_id in PREV_REPLY_MESSAGE:
             await PREV_REPLY_MESSAGE[chat_id].delete()
         PREV_REPLY_MESSAGE[chat_id] = sed
-
 
 @bot.on(
     events.NewMessage(incoming=True,
