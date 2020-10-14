@@ -31,8 +31,8 @@ USER_BOT_WARN_ZERO = "You Have Attempted To Spam Masters Inbox So Inorder To Avo
 botisnoob = Var.TG_BOT_USER_NAME_BF_HER
 USER_BOT_NO_WARN = (
     "**Hello, This is Friday PM Protection Service ⚠️**\n\n"
-    f"`My Master {DEFAULTUSER} is Busy Right Now !`"
-    f"**I Recommend You To PM My Master Using This Bot ==>** {botisnoob}"
+    f"`My Master {DEFAULTUSER} is Busy Right Now !` \n"
+    f"**I Recommend You To PM My Master Using This Bot ==>** @{botisnoob} \n\n"
     "__You May Choose A Reason You Have Came For__ 👏 \n\n"
     f"**{CUSTOM_MIDDLE_PMP}**")
 
