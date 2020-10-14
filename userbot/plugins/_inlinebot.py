@@ -10,10 +10,9 @@ from telethon.tl.functions.users import GetFullUserRequest
 from userbot import ALIVE_NAME
 from userbot import CMD_LIST
 from userbot.plugins import inlinestats
-
+sed = "https://telegra.ph/file/7368645fc8213d4840ee6.jpg"
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Friday"
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
-
     @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
     async def inline_handler(event):
         builder = event.builder
@@ -30,8 +29,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 link_preview=False,
             )
         if event.query.user_id == bot.uid and query == "stats":
-            result = builder.article(
-                title="Stats",
+            result = builder.photo(
+                sed,
                 text=f"**Showing Stats For {DEFAULTUSER}'s Friday** \nNote --> Only Owner Can Check This \n(C) @FridayOT",
                 buttons=[
                     [custom.Button.inline("Show Stats ", data="terminator")],
