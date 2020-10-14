@@ -1,6 +1,6 @@
 import re
 from math import ceil
-
+import userbot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
 from telethon import Button
 from telethon import custom
 from telethon import events
@@ -57,6 +57,11 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                         custom.Button.inline(
                             "I Here For Talking With Your Master",
                             data="whattalk")
+                    ],
+                    [
+                        custom.Button.inline(
+                            "Approve User",
+                            data="approveme")
                     ],
                     [
                         custom.Button.inline("I Am Here For Asking Something",
@@ -163,7 +168,17 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         await event.edit("Choice Accepted ✔️")
         text3 = "Ok, Wait. You can Ask After Master Approves You. Kindly, Wait."
         await borg.send_message(event.query.user_id, text3)
-
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"approveme")))
+    async def rip(event):
+        if event.query.user_id == bot.uid:
+            chat_s = await event.get_chat()
+            text4 = "You Have Been Approved"
+            if not pmpermit_sql.is_approved(event.query.user_id):
+                    pmpermit_sql.approve(event.query.user_id, "Approved Another Nibba")
+                    await event.edit("Approved to pm [🤭](tg://user?id={})".format(event.query.user_id))
+            await borg.send_message(event.query.user_id, text4)
+        else:
+            pass
 
 def paginate_help(page_number, loaded_plugins, prefix):
     number_of_rows = 8
