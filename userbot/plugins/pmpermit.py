@@ -27,11 +27,13 @@ DEFAULTUSER = (str(ALIVE_NAME)
 CUSTOM_MIDDLE_PMP = (str(CUSTOM_PMPERMIT)
                      if CUSTOM_PMPERMIT else "Protection By Friday 🇮🇳")
 USER_BOT_WARN_ZERO = "You Have Attempted To Spam Masters Inbox So Inorder To Avoid Over Spam , You Have Been Blocked By Userbot"
+replied_user = await event.client(GetFullUserRequest(event.chat_id))
+firstname = replied_user.user.first_name
+chat = await event.get_chat()
 USER_BOT_NO_WARN = (
-    "**Hello ,This is Friday Protection Service ⚠️**\n\n"
+    "**Hello {firstname}, This is Friday PM Protection Service ⚠️**\n\n"
     f"`My Master {DEFAULTUSER} is Busy Right Now !`"
-    "__You May Leave A Request And Wait Till He Approves You.__ \n\n"
-    "**Now You Are In Trouble. So Send** `/start` **And Register A Request** \n\n"
+    "__You May Choose A Reason You Have Came For__ 👏 \n\n"
     f"**{CUSTOM_MIDDLE_PMP}**")
 
 if Var.PRIVATE_GROUP_ID is not None:
