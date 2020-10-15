@@ -8,14 +8,14 @@ jobs:
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@master
         with:
-          find: "event.from_id"
-          replace: "event.sender_id"
+          find: "@borg.on"
+          replace: "@friday.on"
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit-message: bug fixes
-          title: bug fixes
-          body: fix bugs
-          labels: fix
-          reviewers: starkgang
-          branch: latestfix
+          commit_message: 'handler fix'
+          commit_options: '--no-verify'
+          repository: .
+          commit_user_name: starkgang
+          commit_user_email: starkgangz@gmail.com
+          commit_author: starkgang <starkgangz@gmail.comm>
