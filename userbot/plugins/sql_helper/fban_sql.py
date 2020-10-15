@@ -38,8 +38,7 @@ def remove_fed(fedids):
 
 def already_added_fed(fedids):
     try:
-        return SESSION.query(Fban).filter(
-            Fban.fedsid is fedids).one()
+        return SESSION.query(Fban).filter(Fban.fedsid is fedids).one()
     except BaseException:
         return None
     finally:
