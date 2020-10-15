@@ -2,13 +2,10 @@
 # (C) BY MIDHUN
 # FOR FRIDAY
 
+from userbot.plugins.sql_helper.fban_sql import (add_fed_in_db,
+                                                 already_added_fed,
+                                                 get_all_fed, remove_fed)
 from userbot.utils import admin_cmd
-from userbot.plugins.sql_helper.fban_sql import (
-    add_fed_in_db,
-    get_all_fed,
-    remove_fed,
-    already_added_fed,
-)
 
 
 @borg.on(admin_cmd("fadd ?(.*)"))
