@@ -39,7 +39,7 @@ def remove_fed(fedids):
 def already_added_fed(fedids):
     try:
         return SESSION.query(Fban).filter(
-            Fban.chat_id is fedids.one()
+            Fban.chat_id is fedids).one()
     except BaseException:
         return None
     finally:
