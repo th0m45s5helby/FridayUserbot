@@ -18,7 +18,7 @@ async def addfed(event):
         await event.edit("`Added Fed Successfuly To List`")
         await asyncio.sleep(3)
         await event.delete()
-    elif already_added_fed(sedlyf):
+    else:
         await event.edit("`Fed is already is database!`")
         await asyncio.sleep(3)
         await event.delete()
