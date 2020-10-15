@@ -1,14 +1,15 @@
 name: Format python code
 on: push
 jobs:
-  autopep8:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: autopep8
-        uses: peter-evans/autopep8@v1
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@master
         with:
-          args: --recursive --in-place --aggressive --aggressive .
+          find: "hello"
+          replace: "world"
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
