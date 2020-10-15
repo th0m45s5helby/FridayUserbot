@@ -12,7 +12,7 @@ from uniborg.util import admin_cmd
 from uniborg.util import progress
 
 
-@borg.on(admin_cmd(pattern="ma ?(.*)", allow_sudo=True))
+@friday.on(admin_cmd(pattern="ma ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

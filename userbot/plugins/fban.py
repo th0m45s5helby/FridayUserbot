@@ -10,7 +10,7 @@ from userbot.plugins.sql_helper.fban_sql import remove_fed
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd("fadd ?(.*)"))
+@friday.on(admin_cmd("fadd ?(.*)"))
 async def addfed(event):
     if event.fwd_from:
         return

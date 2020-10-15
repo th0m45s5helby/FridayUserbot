@@ -25,7 +25,7 @@ from userbot.utils import edit_or_reply
 from userbot.utils import sudo_cmd
 
 
-@borg.on(
+@friday.on(
     events.NewMessage(
         incoming=True,
         blacklist_chats=Config.UB_BLACK_LIST_CHAT,

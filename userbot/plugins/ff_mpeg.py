@@ -11,7 +11,7 @@ from userbot.utils import progress
 FF_MPEG_DOWN_LOAD_MEDIA_PATH = "uniborg.media.ffmpeg"
 
 
-@borg.on(admin_cmd("ffmpegsave"))
+@friday.on(admin_cmd("ffmpegsave"))
 async def ff_mpeg_trim_cmd(event):
     if event.fwd_from:
         return
@@ -45,7 +45,7 @@ async def ff_mpeg_trim_cmd(event):
         )
 
 
-@borg.on(admin_cmd("ffmpegtrim"))
+@friday.on(admin_cmd("ffmpegtrim"))
 async def ff_mpeg_trim_cmd(event):
     if event.fwd_from:
         return

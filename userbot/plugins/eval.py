@@ -12,8 +12,8 @@ from uniborg.util import edit_or_reply
 from uniborg.util import sudo_cmd
 
 
-@borg.on(admin_cmd("eval"))
-@borg.on(sudo_cmd("eval", allow_sudo=True))
+@friday.on(admin_cmd("eval"))
+@friday.on(sudo_cmd("eval", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

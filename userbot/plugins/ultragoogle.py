@@ -21,8 +21,8 @@ def progress(current, total):
         current, total, (current / total) * 100))
 
 
-@borg.on(admin_cmd(pattern="search (.*)"))
-@borg.on(sudo_cmd(pattern="search (.*)", allow_sudo=True))
+@friday.on(admin_cmd(pattern="search (.*)"))
+@friday.on(sudo_cmd(pattern="search (.*)", allow_sudo=True))
 async def _(event):
     stark = await edit_or_reply(event, "`Processing Your Request`")
     if event.fwd_from:
@@ -54,7 +54,7 @@ async def _(event):
                      link_preview=False)
 
 
-@borg.on(admin_cmd(pattern="image (.*)"))
+@friday.on(admin_cmd(pattern="image (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -98,7 +98,7 @@ async def _(event):
     await event.delete()
 
 
-@borg.on(admin_cmd(pattern="grs"))
+@friday.on(admin_cmd(pattern="grs"))
 async def _(event):
     if event.fwd_from:
         return

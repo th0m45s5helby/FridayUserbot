@@ -18,10 +18,10 @@ Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
 
 
-@borg.on(
+@friday.on(
     admin_cmd(pattern=r"(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)",
               outgoing=True))
-@borg.on(
+@friday.on(
     sudo_cmd(pattern=r"(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)",
              allow_sudo=True))
 async def variable(var):
@@ -116,8 +116,8 @@ async def variable(var):
             return await edit_or_reply(var, f"**{variable}**  `is not exists`")
 
 
-@borg.on(admin_cmd(pattern="usage$", outgoing=True))
-@borg.on(sudo_cmd(pattern="usage$", allow_sudo=True))
+@friday.on(admin_cmd(pattern="usage$", outgoing=True))
+@friday.on(sudo_cmd(pattern="usage$", allow_sudo=True))
 async def dyno_usage(dyno):
     """
     Get your account Dyno Usage
@@ -198,8 +198,8 @@ def prettyjson(obj, indent=2, maxlinelength=80):
     return indentitems(items, indent, level=0)
 
 
-@borg.on(admin_cmd(pattern="logs$", outgoing=True))
-@borg.on(sudo_cmd(pattern="logs$", allow_sudo=True))
+@friday.on(admin_cmd(pattern="logs$", outgoing=True))
+@friday.on(sudo_cmd(pattern="logs$", allow_sudo=True))
 async def _(givelogs):
     try:
         Heroku = heroku3.from_key(Var.HEROKU_API_KEY)

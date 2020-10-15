@@ -15,7 +15,7 @@ langi = "en"
 
 
 # kanged from Blank-x ;---;
-@borg.on(admin_cmd("imdb (.*)", outgoing=True))
+@friday.on(admin_cmd("imdb (.*)", outgoing=True))
 async def imdb(e):
     try:
         movie_name = e.pattern_match.group(1)

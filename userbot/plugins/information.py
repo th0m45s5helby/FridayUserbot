@@ -13,8 +13,8 @@ from userbot.utils import edit_or_reply
 from userbot.utils import sudo_cmd
 
 
-@borg.on(admin_cmd("info ?(.*)"))
-@borg.on(sudo_cmd("info ?(.*)", allow_sudo=True))
+@friday.on(admin_cmd("info ?(.*)"))
+@friday.on(sudo_cmd("info ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

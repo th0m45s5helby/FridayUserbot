@@ -9,7 +9,7 @@ from userbot.utils import admin_cmd
 from userbot.utils import progress
 
 
-@borg.on(admin_cmd(pattern="convert (.*)"))  # pylint:disable=E0602
+@friday.on(admin_cmd(pattern="convert (.*)"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return

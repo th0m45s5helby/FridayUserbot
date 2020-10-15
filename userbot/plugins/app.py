@@ -12,8 +12,8 @@ from ..utils import edit_or_reply
 from ..utils import sudo_cmd
 
 
-@borg.on(admin_cmd(pattern="app (.*)"))
-@borg.on(sudo_cmd(pattern="app (.*)", allow_sudo=True))
+@friday.on(admin_cmd(pattern="app (.*)"))
+@friday.on(sudo_cmd(pattern="app (.*)", allow_sudo=True))
 async def apk(event):
     app_name = event.pattern_match.group(1)
     event = await edit_or_reply(event, "Searching!")
@@ -55,8 +55,8 @@ async def apk(event):
         await event.edit("Exception Occured:- " + str(err))
 
 
-@borg.on(admin_cmd(pattern="appr (.*)"))
-@borg.on(sudo_cmd(pattern="appr (.*)", allow_sudo=True))
+@friday.on(admin_cmd(pattern="appr (.*)"))
+@friday.on(sudo_cmd(pattern="appr (.*)", allow_sudo=True))
 async def apkr(event):
     app_name = event.pattern_match.group(1)
     event = await edit_or_reply(event, "searching!")

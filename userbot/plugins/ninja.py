@@ -33,8 +33,8 @@ async def await_read(chat, message):
     await fut
 
 
-@borg.on(admin_cmd(pattern="(del)(?:ete)?$"))
-@borg.on(admin_cmd(pattern=r"(edit)(?:\s+(.*))?$"))
+@friday.on(admin_cmd(pattern="(del)(?:ete)?$"))
+@friday.on(admin_cmd(pattern=r"(edit)(?:\s+(.*))?$"))
 async def delete(event):
     await event.delete()
     command = event.pattern_match.group(1)

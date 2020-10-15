@@ -8,8 +8,8 @@ from uniborg.util import edit_or_reply
 from uniborg.util import sudo_cmd
 
 
-@borg.on(admin_cmd(pattern="xkcd ?(.*)"))
-@borg.on(sudo_cmd(pattern="xkcd ?(.*)", allow_sudo=True))
+@friday.on(admin_cmd(pattern="xkcd ?(.*)"))
+@friday.on(sudo_cmd(pattern="xkcd ?(.*)", allow_sudo=True))
 async def _(event):
     livinglegend = await edit_or_reply(event, "Oh SeD Pls Wait")
     if event.fwd_from:

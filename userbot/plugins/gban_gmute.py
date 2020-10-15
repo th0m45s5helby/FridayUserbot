@@ -53,7 +53,7 @@ async def get_user_from_id(user, event):
     return user_obj
 
 
-@borg.on(admin_cmd(pattern="gban ?(.*)"))
+@friday.on(admin_cmd(pattern="gban ?(.*)"))
 async def gspider(userbot):
     lol = userbot
     sender = await lol.get_sender()
@@ -121,7 +121,7 @@ async def gspider(userbot):
     )
 
 
-@borg.on(admin_cmd(pattern="ungban ?(.*)"))
+@friday.on(admin_cmd(pattern="ungban ?(.*)"))
 async def gspider(userbot):
     lol = userbot
     sender = await lol.get_sender()
@@ -187,7 +187,7 @@ async def gspider(userbot):
     )
 
 
-@borg.on(ChatAction)
+@friday.on(ChatAction)
 async def handler(rkG):
     if rkG.user_joined or rkG.user_added:
         try:

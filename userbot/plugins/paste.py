@@ -19,8 +19,8 @@ def progress(current, total):
         current, total, (current / total) * 100))
 
 
-@borg.on(admin_cmd("paste ?(.*)"))
-@borg.on(sudo_cmd("paste ?(.*)", allow_sudo=True))
+@friday.on(admin_cmd("paste ?(.*)"))
+@friday.on(sudo_cmd("paste ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

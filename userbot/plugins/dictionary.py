@@ -6,8 +6,8 @@ from uniborg.util import edit_or_reply
 from uniborg.util import sudo_cmd
 
 
-@borg.on(admin_cmd("meaning (.*)"))
-@borg.on(sudo_cmd("meaning (.*)", allow_sudo=True))
+@friday.on(admin_cmd("meaning (.*)"))
+@friday.on(sudo_cmd("meaning (.*)", allow_sudo=True))
 async def _(event):
     stark = await edit_or_reply(event, "Finding Meaning.....")
     if event.fwd_from:

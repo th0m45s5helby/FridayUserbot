@@ -13,8 +13,8 @@ from uniborg.util import edit_or_reply
 from uniborg.util import sudo_cmd
 
 
-@borg.on(admin_cmd(pattern="barcode ?(.*)"))
-@borg.on(sudo_cmd(pattern="barcode ?(.*)", allow_sudo=True))
+@friday.on(admin_cmd(pattern="barcode ?(.*)"))
+@friday.on(sudo_cmd(pattern="barcode ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

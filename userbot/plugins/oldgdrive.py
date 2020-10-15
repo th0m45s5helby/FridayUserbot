@@ -33,7 +33,7 @@ G_DRIVE_DIR_MIME_TYPE = "application/vnd.google-apps.folder"
 
 
 # @command(pattern="^.ugdrive ?(.*)")
-@borg.on(admin_cmd(pattern=r"ugdrive ?(.*)"))
+@friday.on(admin_cmd(pattern=r"ugdrive ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -114,7 +114,7 @@ async def _(event):
 
 
 # @command(pattern="^.drivesch ?(.*)")
-@borg.on(admin_cmd(pattern=r"drivesch ?(.*)"))
+@friday.on(admin_cmd(pattern=r"drivesch ?(.*)"))
 async def sch(event):
     if event.fwd_from:
         return
@@ -180,7 +180,7 @@ async def gsearch(http, query, filename):
 
 
 # @command(pattern="^.gdrivedir ?(.*)")
-@borg.on(admin_cmd(pattern=r"gdrivedir ?(.*)"))
+@friday.on(admin_cmd(pattern=r"gdrivedir ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -374,7 +374,7 @@ async def upload_file(http, file_path, file_name, mime_type, event, parent_id):
 
 
 # @command(pattern="^.gfolder ?(.*)")
-@borg.on(admin_cmd(pattern=r"gfolder ?(.*)"))
+@friday.on(admin_cmd(pattern=r"gfolder ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

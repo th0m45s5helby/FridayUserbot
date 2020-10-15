@@ -20,8 +20,8 @@ SOCKS5_TXT = "**Proxy Info** \nType: __SOCKS4__ \nTimeOut: __10000__ \nCountry: 
 sedpng = "https://soon.proxyscrape.com/asset/img/service/downloadicon.svg"
 
 
-@borg.on(admin_cmd(pattern="http$"))
-@borg.on(sudo_cmd(pattern="http$", allow_sudo=True))
+@friday.on(admin_cmd(pattern="http$"))
+@friday.on(sudo_cmd(pattern="http$", allow_sudo=True))
 async def starkxD(event):
     await event.get_chat()
     file_name = "proxy_http.txt"
@@ -40,8 +40,8 @@ async def starkxD(event):
     )
 
 
-@borg.on(admin_cmd(pattern="socks4$"))
-@borg.on(admin_cmd(pattern="socks4$", allow_sudo=True))
+@friday.on(admin_cmd(pattern="socks4$"))
+@friday.on(admin_cmd(pattern="socks4$", allow_sudo=True))
 async def starkgang(event):
     await event.get_chat()
     file_name = "proxy_socks4.txt"
@@ -62,8 +62,8 @@ async def starkgang(event):
     )
 
 
-@borg.on(admin_cmd(pattern="socks5$"))
-@borg.on(admin_cmd(pattern="socks5$", allow_sudo=True))
+@friday.on(admin_cmd(pattern="socks5$"))
+@friday.on(admin_cmd(pattern="socks5$", allow_sudo=True))
 async def friday(event):
     await event.get_chat()
     file_name = "proxy_socks5.txt"

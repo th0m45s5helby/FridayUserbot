@@ -12,7 +12,7 @@ from userbot.utils import sudo_cmd
 DELETE_TIMEOUT = 5
 
 
-@borg.on(admin_cmd(pattern="install", outgoing=True))
+@friday.on(admin_cmd(pattern="install", outgoing=True))
 async def install(event):
     if event.fwd_from:
         return

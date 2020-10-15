@@ -5,7 +5,7 @@ from uniborg.util import admin_cmd
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd("warn1"))
+@friday.on(admin_cmd("warn1"))
 async def _(event):
     if event.fwd_from:
         return
@@ -28,7 +28,7 @@ async def _(event):
 """.admin Plugin for @UniBorg"""
 
 
-@borg.on(admin_cmd("warn2"))
+@friday.on(admin_cmd("warn2"))
 async def _(event):
     if event.fwd_from:
         return
@@ -51,7 +51,7 @@ async def _(event):
 """.admin Plugin for @UniBorg"""
 
 
-@borg.on(admin_cmd("warn3"))
+@friday.on(admin_cmd("warn3"))
 async def _(event):
     if event.fwd_from:
         return
@@ -72,7 +72,7 @@ async def _(event):
 """.admin Plugin for @UniBorg"""
 
 
-@borg.on(admin_cmd("warn0"))
+@friday.on(admin_cmd("warn0"))
 async def _(event):
     if event.fwd_from:
         return
@@ -93,7 +93,7 @@ async def _(event):
 """.admin Plugin for @UniBorg"""
 
 
-@borg.on(admin_cmd("ocb"))
+@friday.on(admin_cmd("ocb"))
 async def _(event):
     if event.fwd_from:
         return
@@ -111,7 +111,7 @@ async def _(event):
     await event.delete()
 
 
-@borg.on(admin_cmd("fw"))
+@friday.on(admin_cmd("fw"))
 async def _(event):
     if event.fwd_from:
         return

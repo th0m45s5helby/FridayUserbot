@@ -9,7 +9,7 @@ from userbot.utils import remove_plugin
 from userbot.utils import sudo_cmd
 
 
-@borg.on(admin_cmd(pattern="load ?(.*)", outgoing=True))
+@friday.on(admin_cmd(pattern="load ?(.*)", outgoing=True))
 async def load(event):
     if event.fwd_from:
         return
@@ -27,7 +27,7 @@ async def load(event):
         )
 
 
-@borg.on(admin_cmd(pattern="unload ?(.*)", outgoing=True))
+@friday.on(admin_cmd(pattern="unload ?(.*)", outgoing=True))
 async def unload(event):
     if event.fwd_from:
         return

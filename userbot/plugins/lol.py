@@ -11,7 +11,7 @@ import random
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd(pattern=r"lol"))
+@friday.on(admin_cmd(pattern=r"lol"))
 async def _(event):
 
     if event.fwd_from:

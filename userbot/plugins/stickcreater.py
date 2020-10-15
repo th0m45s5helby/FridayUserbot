@@ -18,7 +18,7 @@ from userbot.utils import sudo_cmd
 # RegEx by https://t.me/c/1220993104/500653 ( @SnapDragon7410 )
 
 
-@borg.on(admin_cmd(pattern=r"stcr ?(?:(.*?) \| )?(.*)", outgoing=True))
+@friday.on(admin_cmd(pattern=r"stcr ?(?:(.*?) \| )?(.*)", outgoing=True))
 async def sticklet(event):
     R = random.randint(0, 256)
     G = random.randint(0, 256)
@@ -76,7 +76,7 @@ async def sticklet(event):
         pass
 
 
-@borg.on(sudo_cmd(pattern=r"stcr ?(?:(.*?) \| )?(.*)", allow_sudo=True))
+@friday.on(sudo_cmd(pattern=r"stcr ?(?:(.*?) \| )?(.*)", allow_sudo=True))
 async def sticklet(event):
     R = random.randint(0, 256)
     G = random.randint(0, 256)
