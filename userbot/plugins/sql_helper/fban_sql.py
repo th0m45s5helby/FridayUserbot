@@ -44,5 +44,3 @@ def already_added_fed(fedids):
         return None
     finally:
         SESSION.close()
-            
-            
