@@ -29,14 +29,20 @@ def get_all_fed():
     return fed_ids
 
 
-def removefeds(fedids):
+def remove_fed(fedids):
     fednibba = SESSION.query(Fban).get(fedids)
     if fednibba:
         SESSION.delete(fednibba)
         SESSION.commit()
 
 
-def get_all_feds():
-    stark = SESSION.query(Fban).all()
-    SESSION.close()
-    return stark
+def already_added_fed(fedids):
+    try:
+        return SESSION.query(Fban).filter(
+            Fban.chat_id is fedids.one()
+    except BaseException:
+        return None
+    finally:
+        SESSION.close()
+            
+            
