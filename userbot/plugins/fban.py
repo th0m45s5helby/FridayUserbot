@@ -3,7 +3,12 @@
 # FOR FRIDAY
 
 from userbot.utils import admin_cmd
-from userbot.plugins.sql_helper.fban_sql import add_fed_in_db, get_all_fed, remove_fed, already_added_fed
+from userbot.plugins.sql_helper.fban_sql import (
+    add_fed_in_db,
+    get_all_fed,
+    remove_fed,
+    already_added_fed,
+)
 
 
 @borg.on(admin_cmd("fadd ?(.*)"))
