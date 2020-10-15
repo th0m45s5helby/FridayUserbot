@@ -14,11 +14,11 @@ async def addfed(event):
         return
     sedlyf = event.pattern_match.group(1)
     if not already_added_fed(sedlyf):
-        add_fed_in_db(sedlyf)
-        await event.edit("`Added Fed Successfuly To List`")
+        await event.edit("`Fed Already Added`")
         await asyncio.sleep(3)
         await event.delete()
-    else:
-        await event.edit("`Fed is already is database!`")
+    elif already_added_fed(sedlyf):
+        add_fed_in_db(sedlyf)
+        await event.edit("`Fed Added`")
         await asyncio.sleep(3)
         await event.delete()
