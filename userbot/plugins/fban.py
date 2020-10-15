@@ -6,7 +6,7 @@ from userbot.plugins.sql_helper.fban_sql import already_added_fed
 from userbot.plugins.sql_helper.fban_sql import get_all_fed
 from userbot.plugins.sql_helper.fban_sql import remove_fed
 from userbot.utils import admin_cmd
-
+import asyncio
 
 @borg.on(admin_cmd("fadd ?(.*)"))
 async def addfed(event):
